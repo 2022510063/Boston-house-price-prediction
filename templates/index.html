@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Boston House Price Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef;
+      padding: 30px;
+      text-align: center;
+    }
+    .form-box {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 60%;
+      margin: auto;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    h2 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Boston House Price Predictor</h2>
+    <form action="/predict" method="post">
+      <input type="text" name="CRIM" placeholder="CRIM - Crime rate"><br>
+      <input type="text" name="ZN" placeholder="ZN - Residential land"><br>
+      <input type="text" name="INDUS" placeholder="INDUS - Industrial area"><br>
+      <input type="text" name="CHAS" placeholder="CHAS - River dummy (0 or 1)"><br>
+      <input type="text" name="NOX" placeholder="NOX - Nitric Oxide conc."><br>
+      <input type="text" name="RM" placeholder="RM - Avg. rooms per dwelling"><br>
+      <input type="text" name="AGE" placeholder="AGE - Older buildings %"><br>
+      <input type="text" name="DIS" placeholder="DIS - Distance to jobs"><br>
+      <input type="text" name="RAD" placeholder="RAD - Highway access index"><br>
+      <input type="text" name="TAX" placeholder="TAX - Property tax rate"><br>
+      <input type="text" name="PTRATIO" placeholder="PTRATIO - Student-teacher ratio"><br>
+      <input type="text" name="B" placeholder="B - Black population metric"><br>
+      <input type="text" name="LSTAT" placeholder="LSTAT - % Lower status"><br>
+      <button type="submit">Predict</button>
+    </form>
+    <h3>{{ prediction_text }}</h3>
+  </div>
+</body>
+</html>
